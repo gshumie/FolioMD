@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+/* FolioMD Architectural Blueprint Surface Tokens & Design System */
+@theme {
+  --color-carbon-950: #0D0E11;
+  --color-carbon-900: #141619;
+  --color-carbon-850: #181B20;
+  --color-carbon-800: #1E2229;
+  --color-carbon-700: #262930;
+  --color-carbon-600: #373C47;
+  --color-carbon-500: #475569;
+  --color-carbon-400: #64748B;
+  --color-carbon-300: #94A3B8;
+  --color-carbon-200: #CBD5E1;
+  --color-carbon-100: #E2E8F0;
+  --color-carbon-50: #F8FAFC;
+
+  --color-accent-electric: #0EA5E9;
+  --color-accent-electricHover: #0284C7;
+  --color-accent-cyan: #38BDF8;
+  --color-accent-blueDim: #0369A1;
+
+  --color-paper-warm: #F8FAFC;
+  --color-paper-pure: #FFFFFF;
+  --color-paper-dark: #141619;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-serif: 'Merriweather', 'Georgia', serif;
+}
+
+/* Base resets & typography */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0D0E11;
+  color: #F8FAFC;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Slim architectural scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262930;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #373C47;
+}
+
+/* Document content styles for preview */
+.document-content-root {
+  word-wrap: break-word;
+}
+
+.document-content-root h1 {
+  font-size: 2.1em;
+  font-weight: 700;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.25;
+  border-bottom: 1px solid currentColor;
+  opacity: 0.95;
+  padding-bottom: 0.4rem;
+}
+
+.document-content-root h1:first-child {
+  margin-top: 0;
+}
+
+.document-content-root h2 {
+  font-size: 1.55em;
+  font-weight: 700;
+  margin-top: 1.6rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  border-bottom: 1px dashed currentColor;
+  opacity: 0.9;
+  padding-bottom: 0.3rem;
+}
+
+.document-content-root h3 {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.35;
+}
+
+.document-content-root h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.document-content-root p {
+  margin-bottom: 1.2rem;
+  line-height: inherit;
+}
+
+.document-content-root a {
+  color: #0EA5E9;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.document-content-root a:hover {
+  color: #38BDF8;
+}
+
+.document-content-root blockquote {
+  border-left: 3px solid #0EA5E9;
+  padding: 0.65rem 1.15rem;
+  margin: 1.4rem 0;
+  background: rgba(14, 165, 233, 0.05);
+  border-radius: 0 4px 4px 0;
+}
+
+.document-content-root blockquote > p:last-child {
+  margin-bottom: 0;
+}
+
+.document-content-root ul {
+  list-style-type: disc;
+  margin-bottom: 1.2rem;
+  padding-left: 1.6rem;
+}
+
+.document-content-root ol {
+  list-style-type: decimal;
+  margin-bottom: 1.2rem;
+  padding-left: 1.6rem;
+}
+
+.document-content-root li {
+  margin-bottom: 0.35rem;
+}
+
+.document-content-root hr {
+  border: 0;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.2;
+  margin: 2.2rem 0;
+}
+
+.document-content-root code:not(pre code) {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.88em;
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  background-color: rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.document-content-root table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.6rem 0;
+  font-size: 0.9em;
+}
+
+.document-content-root th,
+.document-content-root td {
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+}
+
+.document-content-root th {
+  background-color: rgba(148, 163, 184, 0.1);
+  font-weight: 600;
+}
+
+.document-content-root tr:hover td {
+  background-color: rgba(14, 165, 233, 0.03);
+}
+
+.document-content-root img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 1.2rem 0;
+}
+
+/* Code block highlight syntax styles */
+.hljs {
+  color: #E2E8F0;
+  background: transparent;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in {
+  color: #0EA5E9;
+  font-weight: 600;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-literal,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type {
+  color: #38BDF8;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion {
+  color: #64748B;
+  font-style: italic;
+}
+
+.hljs-number,
+.hljs-regexp,
+.hljs-link {
+  color: #F59E0B;
+}
+
+.hljs-variable,
+.hljs-punctuation {
+  color: #CBD5E1;
+}
+
+.hljs-meta {
+  color: #A855F7;
+}
+
+/* Print CSS Rules */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  .no-print, header, footer, .editor-pane, .resizer, .toolbar, .no-print-area {
+    display: none !important;
+  }
+
+  .preview-pane {
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    border: none !important;
+  }
+
+  .document-preview-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+}
