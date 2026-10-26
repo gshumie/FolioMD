@@ -1,0 +1,35 @@
+name: FolioMD CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit-and-build:
+    name: Security Audit & Production Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Verify Pre-Push Security Suite (18/18 XSS & Sanitization Tests)
+        run: npm run test:security
+
+      - name: Verify TypeScript & Production Bundle
+        run: npm run build
