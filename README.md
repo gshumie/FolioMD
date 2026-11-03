@@ -9,6 +9,10 @@
 
 Write, paste, or upload Markdown on the left pane and instantly preview, customize, and export cleanly formatted HTML or PDF documents on the right pane.
 
+<p align="center">
+  <img src="docs/screenshots/split-view.png" alt="FolioMD Split-Screen Workspace" width="100%">
+</p>
+
 ---
 
 ## Architectural & Design Philosophy
@@ -30,11 +34,19 @@ FolioMD eliminates generic dashboard bloat, decorative neon gradients, and float
 - **Keyboard Shortcuts:** `Tab` (2-space indentation without losing focus), `Shift+Tab` (outdent), `Ctrl/Cmd+S` (save notification), `Ctrl/Cmd+P` (vector print).
 - **Drag-and-Drop Ingestion:** Drag `.md`, `.markdown`, or `.txt` files directly into the editor with visual blueprint dropzone feedback.
 
+<p align="center">
+  <img src="docs/screenshots/editor-view.png" alt="FolioMD Editor Only View" width="100%">
+</p>
+
 ### 2. High-Fidelity Live Preview
 - **Full GFM Support:** GitHub-Flavored Markdown rendering including tables, task lists, and blockquote callouts.
 - **Syntax Highlighting:** Integrated `highlight.js` with language detection and one-click code snippet copy buttons.
 - **Interactive Pane Resizer:** Draggable split handle allowing custom width ratios from 25% to 75%.
 - **View Modes:** Toggle seamlessly between **Split View**, **Editor Only**, and **Preview Only**.
+
+<p align="center">
+  <img src="docs/screenshots/preview-view.png" alt="FolioMD Live Preview View" width="100%">
+</p>
 
 ### 3. Curated Editorial Typography & Paper Themes
 - **Typography Styles:**
